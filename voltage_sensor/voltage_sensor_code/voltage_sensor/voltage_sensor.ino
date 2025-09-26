@@ -50,12 +50,4 @@ void loop() {
   Serial.print(voutcalipoly);
   Serial.println("] Volts");
   delay(500);
-
-
-    
-
-
-
-
-
 }
