@@ -63,48 +63,19 @@ void ShowValueMQ135() {
   Serial.println("ppm");
 }
 
-int AVGvalue(int sample_size, float ppm) {
-
-
-  bool initialBufferCreated = 0;
-  int samples[sample_size];
-  int indexSample = 0;
-  unsigned long sumSamples = 0;
-  bool bufferFilled = 0;
-
-
-  // initial Buffer amount 100 samples for calculate Mean
-  if (initialBufferCreated == 0) {  // if Buffer doesn't created do below
-    for (int i = 0; i < sample_size; i++) {
-      samples[sample_size] = 0;
-    }
-    initialBufferCreated = 1;  // make state that show Buffer have been created.  สร้างสถานะที่บ่งบอกว่า Buffer จำนวน 100 Sample ได้ถูกสร้างแล้ว!
+float AVGvalue(){
+  float sum_sample = 0;
+  float mean_sample;
+  for(int i=0;i<SAMPLE_SIZE;i++){
+    sum_sample += ppm;
   }
-
-  sumSamples -= samples[indexSample];
-
-  samples[indexSample] = ppm;
-
-  sumSamples += ppm;
-
-  indexSample++;
-  if (indexSample >= sample_size) {
-    indexSample = 0;
-    bufferFilled = 1;
-  }
-
-  int count = bufferFilled ? sample_size : indexSample;
-  float average = (float)sumSamples / count;
-  return average;
+  mean_sample = sum_sample/100.0;
+  Serial.print("Mean of PPM : ");
+  Serial.println(mean_sample);
 }
 
 void loop() {
   ShowValueMQ135();
   LightOutWhenCOexceed();
-
-  // float average = AVGvalue(SAMPLE_SIZE, ppm);
-
-  // Serial.print("Average : ");
-  // Serial.println(average);
-  delay(100);
+  AVGvalue();
 }
