@@ -1,6 +1,6 @@
 #define LED 34
 #define SENSOR 35
-float sensor;
+int sensor;
 bool sensor_detect;
 
 
@@ -12,10 +12,12 @@ void setup() {
 
 void loop() {
   sensor = digitalRead(SENSOR);
-  if(sensor==0){
-  Serial.println("Found the metal!");
+  if(sensor == 1){
+    Serial.println("Found the metal !");
   }
-  else{
-    Serial.println("Doesn't found the metal!");
+  if(sensor == 0){
+    Serial.println("Doesn't the metal !");
   }
+  delay(500);
 }
+
