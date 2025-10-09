@@ -1,0 +1,5 @@
+Cyber and Physical System and Sensor is a one of the subject of Sophomore in IoT Engineering, KMITL. 
+This repository is made for sharing a code and data from sensor that I have been calibrated or connected. 
+
+Cyber and Physical System and Sensor คือ หนึ่งในวิชาในตอนปี 2 ในสาขาวิศวกรรมระบบไอโอทีและสารสนเทศ ของ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+Repository นี้ถูกสร้างขึ้นเพื่อแบ่งปันโปรแกรมและข้อมูลที่ได้จากการเชื่อมต่อ Sensor หรือการปรับเทียบ (Calibrated) เท่านั้น ! 
