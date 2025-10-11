@@ -1,20 +1,14 @@
 #include <Wire.h>
 #include "MAX30100_PulseOximeter.h"
 
-#define REPORTING_PERIOD_MS     1000
-
-// PulseOximeter is the higher level interface to the sensor
-// it offers:
-//  * beat detection reporting
-//  * heart rate calculation
-//  * SpO2 (oxidation level) calculation
+#define PERIOD_SENDING     1000 // amount of time that for sending value = 1 second.
 PulseOximeter pox;
-
 uint32_t tsLastReport = 0;
 
-// Callback (registered below) fired when a pulse is detected
-void onBeatDetected()
-{
+// This function'll do when detected a heart beat. ฟังก์ชันนี้จะทำงานเมื่อมีการตรวจพบการเต้นของหัวใจ
+
+void onBeatDetected() // This function will execute by Interrupt --> 
+{ 
     Serial.println("Beat!");
 }
 

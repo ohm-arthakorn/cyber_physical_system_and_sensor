@@ -1,6 +1,4 @@
-#define R1 29700       // Ohm
-#define R2 7440        // Ohm
-#define R_total 37140  // Ohm
+
 #define ADCpin 33
 
 // coefficient of linear calibraton สัมประสิทธิ์ของการปรับเทียบแบบเส้นตรง
